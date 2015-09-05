@@ -1,0 +1,13 @@
+// GENERATE EXTEND ICON - FOR FONT ICONS (using icomoon)
+@mixin generate_extend_icon($content) {
+  content: $content;
+  font-family: $icon_font; font-style: normal; font-weight: normal; text-transform: none; -webkit-font-smoothing: antialiased; speak: none;
+}
+
+// GENERATE CLASS SELECTOR ICON - FOR FONT ICONS (using icomoon)
+@mixin generate_icon($name, $content, $font-size, $line-height, $margin: 0 0 0 0, $color: black) {
+  .icon_#{$name}:before {
+    content: $content; margin: $margin;
+    font-size: $font-size; line-height: $line-height; color: $color;
+  }
+}

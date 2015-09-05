@@ -1,0 +1,64 @@
+//*
+// GRID HELPER MIXINS
+//*
+@mixin page_vertical_spacing {
+  margin-bottom: $bl*4;
+
+  @include respond-to($medium) {
+    margin-bottom: $bl*6;
+  }
+  @include respond-to($large) {
+    margin-bottom: $bl*8;
+  }
+}
+
+//*
+// BASELINE (12px)
+//*
+$bl_px: 13px;
+$bl: calculate-em(16px, $bl_px);
+
+//*
+// GRID VARIABLES
+//  - 12 columns of 60px with 11 gutters of 38px.
+//*
+$max_width: 1091;
+$col_amount: 12;
+$col_width_px: 57;
+$gutter_width_px: 37;
+
+$mobile_gutter: calculate-em(16px, 26px);
+$mobile_vert_padding: $bl*3; // As used on homepage and .boxed_image_dataset
+$medium_vert_padding: $bl*6; // As used on homepage and .boxed_image_dataset
+$medium_max_width: calculate-em(16px, 720px);
+
+//*
+// CALCULATED GRID VARIABLES
+//*
+$max_width_px: $max-width * 1px;
+$max_width_em: calculate-em(16px, $max_width_px);
+$col_width: ($col_width_px / $max-width) * 100;
+$gutter_width: ($gutter_width_px / $max-width) * 100;
+
+//*
+// BREAKPOINTS
+// If you update these breakpoints, ensure that you update the associated varaibles
+// in the following Coffee file:
+// /app/assets/javascripts/application.coffee
+//*
+$giant: 95em;
+$extra_large: 90em;
+$large: 71em;
+$medium: 48em;
+$intermediate: 32.5em;
+$small: 36em;
+
+//*
+// JAVASCRIP BREAKPOINT ELEMENT
+//*
+#breakpoint_element {
+  position: relative; z-index: 36; // Webkit will not allow z-index to be returned to JS unless positioned
+}
+@include respond-to($medium) { #breakpoint_element { z-index: 48; } }
+@include respond-to($large) { #breakpoint_element { z-index: 71; } }
+@include respond-to($extra_large) { #breakpoint_element { z-index: 90; } }

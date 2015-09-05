@@ -1,0 +1,42 @@
+//*
+//  STRIP UNITS FROM A VALUE
+//  Removes the unit type back to a bare integer
+//*
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+//*
+// ADD A VALUE TO A UNIT
+// Will return value with the unit you specify
+//*
+@function values_to_units($values, $unit, $modifier:null, $modifier_value:null) {
+  @if $modifier == divide {
+    @each $v in $values {
+      @if strip-units($v)*1 == 0 {
+        @return 0
+      }
+      @else {
+        @return strip-units($v/$modifier_value)*1#{$unit};
+      }
+    }
+  }
+  @else {
+    @each $v in $values {
+      @if strip-units($v)*1 == 0 {
+        @return 0
+      }
+      @else {
+        @return strip-units($v)*1#{$unit};
+      }
+    }
+  }
+}
+
+//*
+// CALCULATE EM FROM PX VALUE
+// Current defined font-size and target font-size required
+//*
+@function calculate-em($font-size, $target-size) {
+  @return strip-units(( ( 1 / $font-size ) * $target-size )) * 1em;
+}

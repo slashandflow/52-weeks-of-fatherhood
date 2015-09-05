@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background: $blue;
+}
+
+//*
+// Text styles
+//*
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+p {}
+a {
+
+}
+strong {}
+em {}
+
+//*
+// List styles
+//  Please define all versions of lists here.
+//*
+ul {
+
+  &.styled_list {}
+}
+ol {}
+
+//*
+// Form styles
+//*
+form {
+}

@@ -1,0 +1,132 @@
+//*
+// BASE FONT DEFINITOIN (body copy)
+// This isn't going to change really.  Most browsers set the base font to be around 16px, we base our EM calculations based on that.
+//*
+$base_font_size_px: 16;
+
+//*
+// FONT FAMLIES
+//*
+// $fira: "fira-sans",sans-serif;
+
+//*
+// FONT FAMILY VARIATIONS
+//*
+// $fira_regular: (
+//   font_family: $fira, family_fallback: $fira_fallback, active_class: 'wf-firasans-n4-active',
+//   font_weight: 400, font_style: normal
+// );
+
+//*
+// FONT STYLES
+//*
+//----------------- HEADER 1 ----------------- //
+// $header_1: (
+//   name: 'header_1',
+//   size_px: 33, line_height_baseline: 3, margin_bottom_baseline: 0,
+//   color: grey(4), font_antialiased: true,
+//   breakpoints: (
+//     ($medium 45 4),
+//     ($large 55 5)
+//   )
+// );
+// $header_1: map-merge($header_1, $fira_bold);
+
+
+//----------------- HEADER 2 ----------------- //
+// $header_2: (
+//   name: 'header_2',
+//   size_px: 23, line_height_baseline: 2, margin_bottom_baseline: 2,
+//   color: grey(4), font_antialiased: true,
+//   breakpoints: (
+//     ($medium 32 3)
+//   )
+// );
+// $header_2: map-merge($header_2, $fira_medium);
+
+
+//----------------- HEADER 3 ----------------- //
+// $header_3: (
+//   name: 'header_3',
+//   size_px: 18, line_height_baseline: 2, margin_bottom_baseline: 1,
+//   color: grey(4), font_antialiased: true
+// );
+// $header_3: map-merge($header_3, $fira_medium);
+
+//----------------- HEADER 3 RESPONSIVE ----------------- //
+// $header_3_responsive: (
+//   name: 'header_3_responsive',
+//   size_px: 18, line_height_baseline: 2, margin_bottom_baseline: 1,
+//   color: grey(4), font_antialiased: true,
+//   breakpoints: (
+//     ($medium 22 2)
+//   )
+// );
+// $header_3_responsive: map-merge($header_3_responsive, $fira_medium);
+
+
+//----------------- HEADER 4 ----------------- //
+// $header_4: (
+//   name: 'header_4',
+//   size_px: 12, line_height_baseline: 1.4, margin_bottom_baseline: 0,
+//   color: grey(4), font_antialiased: true, uppercase: true
+// );
+// $header_4: map-merge($header_4, $fira_medium);
+
+
+//----------------- PARA ----------------- //
+// $para: (
+//   name: 'para',
+//   size_px: 16, line_height_baseline: 2, margin_bottom_baseline: 1,
+//   color: grey(3)
+// );
+// $para: map-merge($para, $fira_regular);
+
+
+//----------------- BIG PARA ----------------- //
+// $big_para: (
+//   name: 'big_para',
+//   size_px: 18, line_height_baseline: 2, margin_bottom_baseline: 1,
+//   color: grey(3), font_antialiased: true
+// );
+// $big_para: map-merge($big_para, $fira_regular);
+
+
+//----------------- SMALL PARA ----------------- //
+// $small_para: (
+//   name: 'small_para',
+//   size_px: 14, line_height_baseline: 2, margin_bottom_baseline: 0,
+//   color: grey(3)
+// );
+// $small_para: map-merge($small_para, $fira_regular);
+
+
+//----------------- ACTION (links) ----------------- //
+// $action: (
+//   name: 'action',
+//   size_px: 18, line_height_baseline: 1.66, margin_bottom_baseline: 0,
+//   color: $red,
+//   breakpoints: (
+//     ($intermediate 22 2)
+//   )
+// );
+// $action: map-merge($action, $fira_medium);
+
+
+//----------------- STRAPLINE ----------------- //
+// $blockquote: (
+//   name: 'blockquote',
+//   size_px: 27, line_height_baseline: 3, margin_bottom_baseline: 0,
+//   color: grey(4), font_antialiased: true,
+//   breakpoints: (
+//     ($medium 40 4)
+//   )
+// );
+// $blockquote: map-merge($blockquote, $fira_bold_italic);
+
+
+//*
+// GENERATE STYLES AND PLACEHOLDERS
+// Your type definition must be declared in the list below.
+//*
+// @include generate_font_classes(($header_1, $header_2, $header_3, $header_3_responsive, $header_4, $para, $big_para, $small_para, $action, $blockquote));

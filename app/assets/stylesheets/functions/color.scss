@@ -1,0 +1,41 @@
+//*
+// Black lightnes adjust
+//  use in css to adjust lightness of black
+//  e.x. color: black(15);
+//*
+@function black($n) { @return adjust-lightness(black,$n); }
+
+@function flat-color-stack($index: 0, $colours: false, $base_colour: false) {
+  @if $base_colour {
+    @if length($colours) > 0 {
+      @if $index == 0 {
+        @if not not index($colours, $base_colour) {
+          @return $base_colour;
+        }
+        @else {
+          @warn 'Base color missing';
+          @return null;
+        }
+      }
+      @else {
+        $base_colour_index: index($colours, $base_colour);
+        $lookup_index: $base_colour_index + $index;
+        @if $lookup_index > 0 {
+          @if $lookup_index <= length($colours) {
+            @return nth($colours, $lookup_index);
+          }
+          @else {
+            @warn 'Out of bounds #{$index} #{length($colours)} vs #{$lookup_index}';
+            @return nth($colours, -1);
+          }
+        }
+        @else {
+          @warn 'Out of bounds';
+          @return nth($colours, 1);
+        }
+      }
+    }
+    @else { @warn 'Empty colours list'; }
+  }
+  @else { @warn 'You need to specify base colour'; }
+}

@@ -1,0 +1,71 @@
+@function px2em ($px) {
+  @return ($px / $base_font_size_px) * 1em;
+}
+
+@function vertical_spacing ($map, $px) {
+  $variant_size_in_px: map-get($map, size_px);
+  @return calculate-em($variant_size_in_px, $px);
+}
+
+@mixin generate_font_styles($map) {
+  font-family: map-get($map, 'family_fallback');
+  font-size: px2em(map-get($map, 'size_px'));
+  line-height: calculate-em(map-get($map, 'size_px'), (map-get($map, 'line_height_baseline') * $bl_px));
+  font-weight: map-get($map, 'font_weight');
+  font-style: map-get($map, 'font_style');
+  margin: 0 0 calculate-em(map-get($map, 'size_px'), (map-get($map, 'margin_bottom_baseline') * $bl_px)) 0;
+  color: map-get($map, 'color');
+
+  @if map-get($map, 'font_antialiased') == true { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+  @if map-get($map, 'uppercase') == true { text-transform: uppercase; }
+
+  // WEBFONT LOADED - UPDATE FONT FAMILY TO INCLUDE WEBFONT
+  .#{map-get($map, 'active_class')} & { font-family: map-get($map, 'font_family'); }
+
+  @if map-has-key($map, 'breakpoints') {
+
+    $breakpoints: map-get($map, 'breakpoints');
+
+    @if type-of(nth($breakpoints, 1)) != list {
+
+      @include respond-to(nth($breakpoints, 1)) {
+        font-size: px2em(nth($breakpoints, 2));
+        line-height: calculate-em(nth($breakpoints, 2), (nth($breakpoints, 3) * $bl_px));
+      }
+
+    } @else if type-of(nth($breakpoints, 1)) == list {
+
+      @each $breakpoint in $breakpoints {
+        @include respond-to(nth($breakpoint, 1)) {
+          font-size: px2em(nth($breakpoint, 2));
+          line-height: calculate-em(nth($breakpoint, 2), (nth($breakpoint, 3) * $bl_px));
+        }
+      }
+
+    }
+  }
+}
+
+@mixin generate_base_font_styles($font_family_map) {
+  font-family: map-get($font_family_map, 'family_fallback');
+  font-weight: map-get($font_family_map, 'font_weight');
+  font-style: map-get($font_family_map, 'font_style');
+
+  // WEBFONT LOADED - UPDATE FONT FAMILY TO INCLUDE WEBFONT
+  .#{map-get($font_family_map, 'active_class')} & { font-family: map-get($font_family_map, 'font_family'); }
+}
+
+@mixin add_antialias { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+@mixin remove_antialias { -webkit-font-smoothing: auto; -moz-osx-font-smoothing: auto; }
+
+@mixin generate_font_classes($list) {
+  @each $map in $list {
+    @if ($map != null) {
+      $name: map-get($map, "name");
+      %#{$name} {
+        @include generate_font_styles($map);
+      }
+    }
+  }
+}

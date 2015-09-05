@@ -1,0 +1,69 @@
+
+//************************** GRID FUNCTIONS **************************//
+
+
+//*
+// SPAN COLUMNS
+// Set an element to span X columns.  The element should be a child of the pagee wrapper.
+//*
+@mixin span-columns($amount){
+  float: left;
+  width: ($col_width * nth($amount, 1)) + ($gutter_width * (nth($amount, 1) - 1)) * 1%;
+  margin-left: $gutter_width * 1%;
+
+  &:first-child { margin-left: 0; }
+
+  @if length($amount) > 1 {
+
+    @if nth($amount, 2) == alpha {
+      margin-left: 0;
+    } @else if nth($amount, 2) == right {
+      float: right;
+    } @else {
+      //  Raise a warning
+    }
+  }
+  @if nth($amount, 1) > $col_amount {
+    // Raise a warning
+  }
+}
+
+//*
+// SPAN COLUMNS WITHIN
+// If your container is already spanning X columns of the grid, you must calculate the child widths based on the parent.
+// You can set child width using this mixin, ensuring you tell the mixin how many columns the parent occupies.
+//*
+@mixin span-columns-within($amount, $within: $col_amount){
+
+  $parent_width_percentage: ($col_width * $within) + ($gutter_width * ($within - 1));
+  $parent_width_px: $max_width * ($parent_width_percentage / 100);
+  $col_width_within: ($col_width_px / $parent_width_px) * 100;
+  $gutter_width_within: ($gutter_width_px / $parent_width_px) * 100;;
+
+  float: left;
+  width: ($col_width_within * $amount) + ($gutter_width_within * ($amount - 1)) * 1%;
+  margin-left: $gutter_width_within * 1%;
+
+  &:first-child { margin-left: 0; }
+}
+
+@mixin span-full-columns($amount) {
+  float: left;
+  width: ($col_width * nth($amount, 1)) + ($gutter_width * (nth($amount, 1)));
+}
+
+@mixin reset-columns {
+  float: none; width: auto; margin-left: 0;
+}
+
+@function columns($amount) {
+  @return ($col_width * nth($amount, 1)) + ($gutter_width * (nth($amount, 1) - 1)) * 1%;
+}
+
+@function inner-gutter() {
+  @return $gutter_width * 1%
+}
+
+@mixin nth-alpha(){
+
+}

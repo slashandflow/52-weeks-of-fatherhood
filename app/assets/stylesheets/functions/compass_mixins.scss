@@ -1,0 +1,50 @@
+//*
+//  VARIABLES
+// Used by Compass mixins
+//*
+$default-has-layout-approach: zoom;
+$legacy-support-for-ie: false; // IE6+7 support
+
+//*
+// CLEARFIX
+//*
+@mixin has-layout($approach: $default-has-layout-approach) {
+  @if $legacy-support-for-ie {
+    @if $approach == zoom {
+      @include has-layout-zoom;
+    }
+    @else if $approach == block {
+      @include has-layout-block;
+    }
+    @else {
+      @warn "Unknown has-layout approach: #{$approach}";
+      @include has-layout-zoom;
+    }
+  }
+}
+
+@mixin clearfix {
+  overflow: hidden;
+  @include has-layout;
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin pie-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @include has-layout;
+}
+
+@mixin hover-link {
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
