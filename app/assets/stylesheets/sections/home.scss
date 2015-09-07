@@ -1,0 +1,74 @@
+nav {
+  z-index: 2; position: relative; padding: $bl*5 0 0 0;
+  text-align: center;
+
+  a {
+    @include generate_base_font_styles($montserrat_bold);
+    @include add_antialias;
+    padding-bottom: calculate_em(18, $bl_px*0.5);
+    font-size: px2em(18); text-decoration: none; color: white;
+    border-bottom: 0.2em solid white;
+    transition: padding .4s, color .4s, border-color .4s;
+
+    &:hover {
+      padding-bottom: 0;
+      color: $grey;
+      border-color: $grey;
+    }
+  }
+}
+
+
+header {
+  z-index: 1; position: relative;
+  text-align: center;
+
+  h1 {
+    position: relative; padding: $bl*5.7 0 0 0;
+
+    .text { 
+      @extend %header_1;
+      z-index: 2; display: block; position: relative; margin: 0 auto; max-width: 6em;
+    }
+    .number {
+      @include generate_base_font_styles($montserrat_light);
+      z-index: 1; display: block; position: absolute; left: 0; top: 0; width: 100%;
+      font-size: px2em(200); line-height: 1; color: $red;
+    }
+  }
+
+  // ** MEDIUM **
+  @include respond-to($medium) {
+
+
+    h1 {
+      padding-top: $bl*16;
+
+      .number { font-size: 16px; line-height: 1; } 
+      .number {
+        font-size: px2em(636); line-height: 1;
+      }
+    }
+  }
+}
+
+.introduction {
+
+  h2 {
+    @extend %header_2;
+    text-align: center;
+  }
+}
+
+.steve,
+.gordon {
+
+  h3 { @extend %header_3; }
+  & > img {
+    border-radius: 50%;
+  }
+  & > p { @extend %para; }
+  & > p:first-of-type { font-size: 16; line-height: 1; }
+  & > p:first-of-type { @extend %big_para; }
+  & > :last-child { margin-bottom: 0; }
+}

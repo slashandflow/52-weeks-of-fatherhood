@@ -185,6 +185,92 @@ textarea {
 @media only screen and (min-width: 90em) {
   #breakpoint_element {
     z-index: 90; } }
+@font-face {
+  font-family: 'montserratbold';
+  src: url("/fonts/montserrat-bold-webfont.eot");
+  src: url("/fonts/montserrat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat-bold-webfont.woff2") format("woff2"), url("/fonts/montserrat-bold-webfont.woff") format("woff"), url("/fonts/montserrat-bold-webfont.ttf") format("truetype"), url("/fonts/montserrat-bold-webfont.svg#montserratbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'montserratlight';
+  src: url("/fonts/montserrat-light-webfont.eot");
+  src: url("/fonts/montserrat-light-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat-light-webfont.woff2") format("woff2"), url("/fonts/montserrat-light-webfont.woff") format("woff"), url("/fonts/montserrat-light-webfont.ttf") format("truetype"), url("/fonts/montserrat-light-webfont.svg#montserratlight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+header h1 .text {
+  font-family: "montserratbold", sans-serif;
+  font-size: 2.75em;
+  line-height: 1.04545em;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 0em 0;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  .wf-firasans-n4-active header h1 .text, header h1 .wf-firasans-n4-active .text {
+    font-family: "montserratbold", sans-serif; }
+  @media only screen and (min-width: 48em) {
+    header h1 .text {
+      font-size: 9.8125em;
+      line-height: 1.04459em; } }
+
+.introduction h2 {
+  font-family: "montserratbold", sans-serif;
+  font-size: 6.25em;
+  line-height: 1em;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 0em 0;
+  color: #a84937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  .wf-firasans-n4-active .introduction h2, .introduction .wf-firasans-n4-active h2 {
+    font-family: "montserratbold", sans-serif; }
+
+.steve h3,
+.gordon h3 {
+  font-family: "montserratbold", sans-serif;
+  font-size: 1.125em;
+  line-height: 1.44444em;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 1.11111em 0;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  .wf-firasans-n4-active .steve h3, .steve .wf-firasans-n4-active h3,
+  .wf-firasans-n4-active .gordon h3,
+  .gordon .wf-firasans-n4-active h3 {
+    font-family: "montserratbold", sans-serif; }
+
+.steve > p,
+.gordon > p {
+  font-family: "montserratlight", sans-serif;
+  font-size: 1em;
+  line-height: 1.5625em;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0 0 1.25em 0;
+  color: #cccccc; }
+  .wf-firasans-n4-active .steve > p,
+  .wf-firasans-n4-active .gordon > p {
+    font-family: "montserratlight", sans-serif; }
+
+.steve > p:first-of-type,
+.gordon > p:first-of-type {
+  font-family: "montserratbold", sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 1.25em 0;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  .wf-firasans-n4-active .steve > p:first-of-type,
+  .wf-firasans-n4-active .gordon > p:first-of-type {
+    font-family: "montserratbold", sans-serif; }
+
 * {
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
@@ -192,3 +278,80 @@ textarea {
 body {
   color: white;
   background: #1b2b31; }
+
+nav {
+  z-index: 2;
+  position: relative;
+  padding: 3.125em 0 0 0;
+  text-align: center; }
+  nav a {
+    font-family: "montserratbold", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 0.27778em;
+    font-size: 1.125em;
+    text-decoration: none;
+    color: white;
+    border-bottom: 0.2em solid white;
+    -webkit-transition: padding .4s, color .4s, border-color .4s;
+            transition: padding .4s, color .4s, border-color .4s; }
+    .wf-firasans-n4-active nav a {
+      font-family: "montserratbold", sans-serif; }
+    nav a:hover {
+      padding-bottom: 0;
+      color: #cccccc;
+      border-color: #cccccc; }
+
+header {
+  z-index: 1;
+  position: relative;
+  text-align: center; }
+  header h1 {
+    position: relative;
+    padding: 3.5625em 0 0 0; }
+    header h1 .text {
+      z-index: 2;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      max-width: 6em; }
+    header h1 .number {
+      font-family: "montserratlight", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      z-index: 1;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      font-size: 12.5em;
+      line-height: 1;
+      color: #a84937; }
+      .wf-firasans-n4-active header h1 .number {
+        font-family: "montserratlight", sans-serif; }
+  @media only screen and (min-width: 48em) {
+    header h1 {
+      padding-top: 10em; }
+      header h1 .number {
+        font-size: 16px;
+        line-height: 1; }
+      header h1 .number {
+        font-size: 39.75em;
+        line-height: 1; } }
+
+.introduction h2 {
+  text-align: center; }
+
+.steve > img,
+.gordon > img {
+  border-radius: 50%; }
+.steve > p:first-of-type,
+.gordon > p:first-of-type {
+  font-size: 16;
+  line-height: 1; }
+.steve > :last-child,
+.gordon > :last-child {
+  margin-bottom: 0; }
