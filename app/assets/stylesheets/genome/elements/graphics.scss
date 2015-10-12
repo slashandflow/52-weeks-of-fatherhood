@@ -1,11 +1,7 @@
-%divider_small {
+@mixin elm-divider_small {
   content: "";
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  width: 2px;
-  height: 130px;
-  background-color: #747c7f;
-  margin-top: 0.2em;
-  margin-bottom:0.2em;
+  display: block; position: relative; margin: 0.2em auto; width: 0.15em; height: $bl*13;
+  background-color: $divider_grey;
 }
+
+%divider_small { @include elm-divider_small; }

@@ -36,16 +36,19 @@ header {
   h1 {
     position: relative; padding: $bl*5.7 0 0 0;
 
-    .text { 
+    .text {
       @extend %header_1;
       z-index: 2; display: block; position: relative; margin: 0 auto; max-width: 6em; margin-bottom: 0.5em;
-
-      &:after{ @extend %divider_small; margin-top:2em; }
     }
     .number {
       @include generate_base_font_styles($montserrat_light);
       z-index: 1; display: block; position: absolute; left: 0; top: 0; width: 100%;
       font-size: px2em(200); line-height: 1; color: $red;
+    }
+
+    &:after{
+      @extend %divider_small;
+      margin-top:2em;
     }
   }
 
@@ -56,10 +59,10 @@ header {
       padding-top: $bl*7.5;
 
       .text{
-        
+
       }
 
-      .number { font-size: 16px; line-height: 1; } 
+      .number { font-size: 16px; line-height: 1; }
       .number {
         font-size: px2em(300); line-height: 1;
       }
@@ -80,7 +83,7 @@ header {
         }
       }
 
-      .number { font-size: 16px; line-height: 1; } 
+      .number { font-size: 16px; line-height: 1; }
       .number {
         font-size: px2em(500); line-height: 1;
       }
@@ -96,7 +99,7 @@ header {
 
       .text{ margin-bottom: 0; }
 
-      .number { font-size: 16px; line-height: 1; } 
+      .number { font-size: 16px; line-height: 1; }
       .number {
         font-size: px2em(636); line-height: 1;
       }
@@ -113,19 +116,19 @@ header {
 }
 
 article{
-  position:relative;
+  position:relative; overflow: hidden;
   text-align: center;
-  overflow: hidden;
-  h1 {
 
-    .number_week {
+  .week_number {
+
+    span {
       @include generate_base_font_styles($montserrat_light);
       font-size: px2em(150); line-height: 1; color: $red;
-
-      &:after{
-        @extend %divider_small;
-      }
     }
+
+    // &:after{
+    //   @extend %divider_small;
+    // }
   }
 
   // ** MEDIUM **
@@ -154,7 +157,7 @@ article{
       width:24%;
       padding-top: 6%;
 
-      .number_week { font-size: 16px; line-height: 1; } 
+      .number_week { font-size: 16px; line-height: 1; }
       .number_week {
         font-size: px2em(214); line-height: 1;
       }
@@ -164,7 +167,7 @@ article{
 
 .steve,
 .gordon {
-  margin:0 0 2em; 
+  margin:0 0 2em;
   text-align: left;
 
   .text { padding: 3em 0; }
