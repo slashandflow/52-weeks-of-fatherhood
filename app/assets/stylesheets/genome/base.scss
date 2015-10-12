@@ -7,6 +7,16 @@ body {
   background: $blue;
 }
 
+main{
+  padding:0 1em;
+  text-align: center;
+
+  // ** MEDIUM **
+  @include respond-to($medium) {
+    padding:0 2em;
+  }
+}
+
 //*
 // Text styles
 //*

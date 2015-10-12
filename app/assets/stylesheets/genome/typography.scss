@@ -61,7 +61,9 @@ $header_1: (
   size_px: 44, line_height_baseline: 4.6, margin_bottom_baseline: 0,
   color: white, font_antialiased: true,
   breakpoints: (
-    ($medium 157 16.4)
+    (34em 76 8),
+    ($medium 120 11),
+    ($large 157 16.4)
   )
 );
 $header_1: map-merge($header_1, $montserrat_bold);
@@ -117,7 +119,7 @@ $para: map-merge($para, $montserrat_light);
 //----------------- BIG PARA ----------------- //
 $big_para: (
   name: 'big_para',
-  size_px: 24, line_height_baseline: 3.6, margin_bottom_baseline: 3,
+  size_px: 24, line_height_baseline: 5, margin_bottom_baseline: 3,
   color: white, font_antialiased: true
 );
 $big_para: map-merge($big_para, $montserrat_bold);

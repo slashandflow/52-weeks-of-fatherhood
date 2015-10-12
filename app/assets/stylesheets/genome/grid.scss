@@ -49,7 +49,7 @@ $gutter_width: ($gutter_width_px / $max-width) * 100;
 $giant: 95em;
 $extra_large: 90em;
 $large: 71em;
-$medium: 48em;
+$medium: 52em;
 $intermediate: 32.5em;
 $small: 36em;
 
@@ -59,6 +59,6 @@ $small: 36em;
 #breakpoint_element {
   position: relative; z-index: 36; // Webkit will not allow z-index to be returned to JS unless positioned
 }
-@include respond-to($medium) { #breakpoint_element { z-index: 48; } }
+@include respond-to($medium) { #breakpoint_element { z-index: 52; } }
 @include respond-to($large) { #breakpoint_element { z-index: 71; } }
 @include respond-to($extra_large) { #breakpoint_element { z-index: 90; } }

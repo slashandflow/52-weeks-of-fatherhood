@@ -1,0 +1,14 @@
+article {
+  margin: 0 auto;
+  max-width: 36em;
+
+  //** MEDIUM **
+  @include respond-to($medium){
+    max-width: 74em;
+    margin-bottom: 2em;
+  }
+}
+
+.steve{
+  
+}

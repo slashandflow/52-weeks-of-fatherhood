@@ -176,9 +176,9 @@ textarea {
   position: relative;
   z-index: 36; }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 52em) {
   #breakpoint_element {
-    z-index: 48; } }
+    z-index: 52; } }
 @media only screen and (min-width: 71em) {
   #breakpoint_element {
     z-index: 71; } }
@@ -209,7 +209,15 @@ header h1 .text {
   -moz-osx-font-smoothing: grayscale; }
   .wf-firasans-n4-active header h1 .text, header h1 .wf-firasans-n4-active .text {
     font-family: "montserratbold", sans-serif; }
-  @media only screen and (min-width: 48em) {
+  @media only screen and (min-width: 34em) {
+    header h1 .text {
+      font-size: 4.75em;
+      line-height: 1.05263em; } }
+  @media only screen and (min-width: 52em) {
+    header h1 .text {
+      font-size: 7.5em;
+      line-height: 0.91667em; } }
+  @media only screen and (min-width: 71em) {
     header h1 .text {
       font-size: 9.8125em;
       line-height: 1.04459em; } }
@@ -243,8 +251,8 @@ header h1 .text {
   .gordon .wf-firasans-n4-active h3 {
     font-family: "montserratbold", sans-serif; }
 
-.steve > p,
-.gordon > p {
+.steve > .text p,
+.gordon > .text p {
   font-family: "montserratlight", sans-serif;
   font-size: 1em;
   line-height: 1.5625em;
@@ -252,24 +260,45 @@ header h1 .text {
   font-style: normal;
   margin: 0 0 1.25em 0;
   color: #cccccc; }
-  .wf-firasans-n4-active .steve > p,
-  .wf-firasans-n4-active .gordon > p {
+  .wf-firasans-n4-active .steve > .text p, .steve > .text .wf-firasans-n4-active p,
+  .wf-firasans-n4-active .gordon > .text p,
+  .gordon > .text .wf-firasans-n4-active p {
     font-family: "montserratlight", sans-serif; }
 
-.steve > p:first-of-type,
-.gordon > p:first-of-type {
+.steve > .text p:first-of-type,
+.gordon > .text p:first-of-type {
   font-family: "montserratbold", sans-serif;
   font-size: 1.5em;
-  line-height: 1.5em;
+  line-height: 2.08333em;
   font-weight: 700;
   font-style: normal;
   margin: 0 0 1.25em 0;
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-  .wf-firasans-n4-active .steve > p:first-of-type,
-  .wf-firasans-n4-active .gordon > p:first-of-type {
+  .wf-firasans-n4-active .steve > .text p:first-of-type, .steve > .text .wf-firasans-n4-active p:first-of-type,
+  .wf-firasans-n4-active .gordon > .text p:first-of-type,
+  .gordon > .text .wf-firasans-n4-active p:first-of-type {
     font-family: "montserratbold", sans-serif; }
+
+article {
+  margin: 0 auto;
+  max-width: 36em; }
+  @media only screen and (min-width: 52em) {
+    article {
+      max-width: 74em;
+      margin-bottom: 2em; } }
+
+main span.divider:after, header h1 .text:after, article h1 .number_week:after {
+  content: "";
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 2px;
+  height: 130px;
+  background-color: #747c7f;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em; }
 
 * {
   -moz-box-sizing: border-box;
@@ -279,30 +308,42 @@ body {
   color: white;
   background: #1b2b31; }
 
+main {
+  padding: 0 1em;
+  text-align: center; }
+  @media only screen and (min-width: 52em) {
+    main {
+      padding: 0 2em; } }
+
 nav {
   z-index: 2;
   position: relative;
   padding: 3.125em 0 0 0;
   text-align: center; }
-  nav a {
-    font-family: "montserratbold", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-bottom: 0.27778em;
-    font-size: 1.125em;
-    text-decoration: none;
-    color: white;
-    border-bottom: 0.2em solid white;
-    -webkit-transition: padding .4s, color .4s, border-color .4s;
-            transition: padding .4s, color .4s, border-color .4s; }
-    .wf-firasans-n4-active nav a {
-      font-family: "montserratbold", sans-serif; }
-    nav a:hover {
-      padding-bottom: 0;
-      color: #cccccc;
-      border-color: #cccccc; }
+
+nav a, main a {
+  font-family: "montserratbold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  clear: both;
+  padding-bottom: 0.27778em;
+  font-size: 1.125em;
+  text-decoration: none;
+  color: white;
+  border-bottom: 0.2em solid white;
+  -webkit-transition: padding .4s, color .4s, border-color .4s;
+          transition: padding .4s, color .4s, border-color .4s; }
+  .wf-firasans-n4-active nav a, .wf-firasans-n4-active main a {
+    font-family: "montserratbold", sans-serif; }
+  nav a:hover, main a:hover {
+    padding-bottom: 0;
+    color: #cccccc;
+    border-color: #cccccc; }
+
+main span.divider:after {
+  margin-top: 3em; }
 
 header {
   z-index: 1;
@@ -316,7 +357,10 @@ header {
       display: block;
       position: relative;
       margin: 0 auto;
-      max-width: 6em; }
+      max-width: 6em;
+      margin-bottom: 0.5em; }
+      header h1 .text:after {
+        margin-top: 2em; }
     header h1 .number {
       font-family: "montserratlight", sans-serif;
       font-weight: 400;
@@ -332,9 +376,32 @@ header {
       color: #a84937; }
       .wf-firasans-n4-active header h1 .number {
         font-family: "montserratlight", sans-serif; }
-  @media only screen and (min-width: 48em) {
+  @media only screen and (min-width: 34em) {
+    header h1 {
+      padding-top: 4.6875em; }
+      header h1 .number {
+        font-size: 16px;
+        line-height: 1; }
+      header h1 .number {
+        font-size: 18.75em;
+        line-height: 1; } }
+  @media only screen and (min-width: 52em) {
+    header h1 {
+      padding-top: 8.75em; }
+      header h1 .text:after {
+        margin-top: 1em;
+        height: 200px; }
+      header h1 .number {
+        font-size: 16px;
+        line-height: 1; }
+      header h1 .number {
+        font-size: 31.25em;
+        line-height: 1; } }
+  @media only screen and (min-width: 71em) {
     header h1 {
       padding-top: 10em; }
+      header h1 .text {
+        margin-bottom: 0; }
       header h1 .number {
         font-size: 16px;
         line-height: 1; }
@@ -345,13 +412,111 @@ header {
 .introduction h2 {
   text-align: center; }
 
-.steve > img,
-.gordon > img {
-  border-radius: 50%; }
-.steve > p:first-of-type,
-.gordon > p:first-of-type {
-  font-size: 16;
-  line-height: 1; }
-.steve > :last-child,
-.gordon > :last-child {
-  margin-bottom: 0; }
+article {
+  position: relative;
+  text-align: center;
+  overflow: hidden; }
+  article h1 .number_week {
+    font-family: "montserratlight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 9.375em;
+    line-height: 1;
+    color: #a84937; }
+    .wf-firasans-n4-active article h1 .number_week {
+      font-family: "montserratlight", sans-serif; }
+  @media only screen and (min-width: 52em) {
+    article {
+      clear: both;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row wrap;
+          -ms-flex-flow: row wrap;
+              flex-flow: row wrap;
+      -webkit-flex: 3 0px;
+          -ms-flex: 3 0px;
+              flex: 3 0px; }
+      article h1 {
+        -webkit-order: 2;
+            -ms-flex-order: 2;
+                order: 2;
+        width: 20%;
+        padding-top: 7%; }
+        article h1 .number_week:after {
+          display: none; }
+        article h1 .number_week:before {
+          display: none; } }
+  @media only screen and (min-width: 71em) {
+    article h1 {
+      width: 24%;
+      padding-top: 6%; }
+      article h1 .number_week {
+        font-size: 16px;
+        line-height: 1; }
+      article h1 .number_week {
+        font-size: 13.375em;
+        line-height: 1; } }
+
+.steve,
+.gordon {
+  margin: 0 0 2em;
+  text-align: left; }
+  .steve .text,
+  .gordon .text {
+    padding: 3em 0; }
+  .steve > img,
+  .gordon > img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 360px;
+    border-radius: 50%; }
+  .steve > .text p:first-of-type,
+  .gordon > .text p:first-of-type {
+    font-size: 16;
+    line-height: 1.3; }
+  .steve > .text:last-child,
+  .gordon > .text:last-child {
+    margin-bottom: 0; }
+  @media only screen and (min-width: 52em) {
+    .steve,
+    .gordon {
+      width: 40%; }
+      .steve img,
+      .gordon img {
+        width: 80%; }
+      .steve .text:before,
+      .gordon .text:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        margin-left: -1px;
+        width: 2px;
+        height: 100%;
+        background-color: #747c7f; } }
+  @media only screen and (min-width: 71em) {
+    .steve,
+    .gordon {
+      width: 38%; } }
+
+@media only screen and (min-width: 52em) {
+  .steve {
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1; } }
+
+@media only screen and (min-width: 52em) {
+  .gordon {
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3; } }
+
+@media only screen and (min-width: 52em) {
+  .stats {
+    -webkit-order: 4;
+        -ms-flex-order: 4;
+            order: 4;
+    width: 100%;
+    background-color: #1b2b31;
+    z-index: 99; } }
