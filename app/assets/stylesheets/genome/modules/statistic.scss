@@ -1,0 +1,46 @@
+.statistic {
+  text-align: center;
+
+  .title {
+    @extend %header_3;
+    margin: 0;
+  }
+  .amount { 
+    @include generate_base_font_styles($montserrat_bold);
+    @include add_antialias;
+    font-size: px2em(16); line-height: 1; color: white;
+  }
+  .baseline { 
+    @extend %para;
+    display: block;
+  }
+  .percentage_bar {
+    display: block; margin: $bl*0.75 auto; width: 85%; 
+
+    .bar {
+      display: block; margin: 0 auto; height: 0.25em;
+      background: $red;
+    }
+    @for $i from 0 through 100 {
+      .bar.percent_#{$i} {
+        width: 1% * $i;
+      }
+    }
+  }
+
+  .top {
+    // position: relative; padding: 0 0 $bl*1.25 0;
+
+    // .percentage_bar {
+    //   position: absolute; bottom: $bl*0.25; left: 0;
+    // }
+  }
+  .bottom {
+    // position: relative; padding: $bl*1.5 0 0 0;
+
+    .percentage_bar {
+      // position: absolute; top: $bl*0.25; left: 0; height: 0.25em;
+      .bar { background: $light_blue; }
+    }
+  }
+}

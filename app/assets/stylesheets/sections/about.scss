@@ -1,0 +1,7 @@
+.introduction {
+
+  h2 {
+    @extend %header_2;
+    text-align: center;
+  }
+}

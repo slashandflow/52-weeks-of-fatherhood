@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta content="text/html charset=UTF-8" http-equiv="Content-Type" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/javascripts/widgets/week_toggle.widget.js" type="text/javascript"></script>
+    <script src="/javascripts/BreakpointDetection.js" type="text/javascript"></script>
+    <script src="/javascripts/application.js" type="text/javascript"></script>
   </head>
   <body>
     <main>
       <nav>
-        <a href="#">About</a>
+        <div class="link">
+          <a href="about.html">About</a>
+        </div>
       </nav>
-      <header>
+      <header id="header">
         <h1>
           <span class="number">52</span><span class="text">weeks of fatherhood</span>
         </h1>
+        <div class="latest">
+          <a href="#week1">View latest</a>
+        </div>
       </header>
-      <article class="week_1">
+      <article class="week" data-week-number="1" id="week1">
         <h2 class="week_number">
           <span title="Week 1">1</span>
         </h2>
@@ -58,155 +68,176 @@
           </div>
         </div>
         <div class="gordon">
-          <img alt="Kinto McLachlan at 1 week old" src="/images/gordon.jpg" />
+          <img alt="Kento McLachlan at 1 week old" src="/images/kento-week-1.jpg" />
           <div class="text">
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi.
-            </p>
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            </p>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            </p>
             <h3>
-              The Best thing?
+              What happened this week?
             </h3>
             <p>
-              Fusce vel accumsan nulla.
+              It’s not that bad.
+            </p>
+            <p>
+              I’d heard labour described as “Apocalypse Now” and “the Exorcist in real life”. Even the midwife referred to the Labour Ward as a “torture chamber” when we heard screams - and I mean SCREAMS - emanating from down the hall. But the true is, it was all pretty painless and straightforward, my body and mind leaving the hospital healthy and intact (I can’t say the same for the Wife’s vagina). Honestly, if I had to describe labour in one word, I would say ‘boring’.
+            </p>
+            <p>
+              Of course, I was expecting to be utterly traumatised so it helps that I ended up only being mildly inconvenienced. Well, they do say ‘prepare for the worst and every surprise will be a pleasant one’. Pessimism won the day here.
             </p>
             <h3>
-              The worst thing?
+              What was the best thing?
             </h3>
             <p>
-              Pellentesque convallis tellus eu leo porttitor pharetra.
+              Realising my life wasn’t over just because I now have to carry a screaming, shitting, crying rock with me everywhere I go.
+            </p>
+            <h3>
+              What was the worst thing?
+            </h3>
+            <p>
+              Taking a peak down at the business end during delivery. The Wife’s vagina had split open like a wet paper bag trying to hold a watermelon. I’ll never forget seeing the Boy’s head poking out, clamped with forceps as the doc tugged him into reality. Fortunately the Wife was too drugged up to notice.
+            </p>
+            <p>
+              It’s going to be a while before I visit down there again.
             </p>
             <h3>
               What have you learnt?
             </h3>
             <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
+              Epidurals are gifts from God and anaesthetists the angels who deliver them.
             </p>
             <h3>
-              Additional comments
+              Any additional comments?
             </h3>
             <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+              I suppose I’d better get used to the notion that I now need to care for another human being. Responsibility and provision are a couple of words that spring to mind. It’s time I realise that fatherhood has started.
+            </p>
+            <p>
+              Fuck.
             </p>
           </div>
         </div>
-        <div class="stats">
-          <div class="graph">
-            <p>
-              Steve
-            </p>
-            <p>
-              Gordon
-            </p>
-            <span class="bar_onepercent"></span>
+        <div class="statistics">
+          <div class="statistic">
+            <h3 class="title">
+              Nappies changed
+            </h3>
+            <span class="baseline">Baseline 70 w/k</span>
+            <div class="top">
+              <h4 class="amount">
+                Steve 59
+              </h4>
+              <div class="percentage_bar">
+                <div class="bar percent_80"></div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="percentage_bar">
+                <div class="bar percent_0"></div>
+              </div>
+              <h4 class="amount">
+                Gordon 0
+              </h4>
+            </div>
+          </div>
+          <div class="statistic">
+            <h3 class="title">
+              Hours sleep
+            </h3>
+            <span class="baseline">Baseline 70 w/k</span>
+            <div class="top">
+              <h4 class="amount">
+                Steve 59
+              </h4>
+              <div class="percentage_bar">
+                <div class="bar percent_80"></div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="percentage_bar">
+                <div class="bar percent_52"></div>
+              </div>
+              <h4 class="amount">
+                Gordon 52
+              </h4>
+            </div>
+          </div>
+          <div class="statistic">
+            <h3 class="title">
+              Time to yourself
+            </h3>
+            <span class="baseline">Baseline 70 w/k</span>
+            <div class="top">
+              <h4 class="amount">
+                Steve 59
+              </h4>
+              <div class="percentage_bar">
+                <div class="bar percent_80"></div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="percentage_bar">
+                <div class="bar percent_35"></div>
+              </div>
+              <h4 class="amount">
+                Gordon 35
+              </h4>
+            </div>
+          </div>
+          <div class="statistic">
+            <h3 class="title">
+              Happiness
+            </h3>
+            <span class="baseline">0 - 10</span>
+            <div class="top">
+              <h4 class="amount">
+                Steve 5
+              </h4>
+              <div class="percentage_bar">
+                <div class="bar percent_80"></div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="percentage_bar">
+                <div class="bar percent_90"></div>
+              </div>
+              <h4 class="amount">
+                Gordon 9
+              </h4>
+            </div>
+          </div>
+          <div class="statistic">
+            <h3 class="title">
+              Stress
+            </h3>
+            <span class="baseline">0 - 10</span>
+            <div class="top">
+              <h4 class="amount">
+                Steve 5
+              </h4>
+              <div class="percentage_bar">
+                <div class="bar percent_80"></div>
+              </div>
+            </div>
+            <div class="bottom">
+              <div class="percentage_bar">
+                <div class="bar percent_30"></div>
+              </div>
+              <h4 class="amount">
+                Gordon 3
+              </h4>
+            </div>
           </div>
         </div>
       </article>
-      <span class="divider"><a href="#">Hide week 1</a></span>
-      <article class="week_2">
+      <div class="coming" id="week4">
         <h2 class="week_number">
           <span title="Week 2">2</span>
         </h2>
-        <div class="steve">
-          <img alt="Libert Grace Brown at 1 week old" src="/images/steve.jpg" />
-          <div class="text">
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi.
-            </p>
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            </p>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            </p>
-            <h3>
-              The Best thing?
-            </h3>
-            <p>
-              Fusce vel accumsan nulla.
-            </p>
-            <h3>
-              The worst thing?
-            </h3>
-            <p>
-              Pellentesque convallis tellus eu leo porttitor pharetra.
-            </p>
-            <h3>
-              What have you learnt?
-            </h3>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            </p>
-            <h3>
-              Additional comments
-            </h3>
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            </p>
-          </div>
-        </div>
-        <div class="gordon">
-          <img alt="Kinto McLachlan at 1 week old" src="/images/gordon.jpg" />
-          <div class="text">
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi.
-            </p>
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            </p>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            </p>
-            <h3>
-              The Best thing?
-            </h3>
-            <p>
-              Fusce vel accumsan nulla.
-            </p>
-            <h3>
-              The worst thing?
-            </h3>
-            <p>
-              Pellentesque convallis tellus eu leo porttitor pharetra.
-            </p>
-            <h3>
-              What have you learnt?
-            </h3>
-            <p>
-              Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            </p>
-            <h3>
-              Additional comments
-            </h3>
-            <p>
-              Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            </p>
-          </div>
-        </div>
-        <div class="stats">
-          <div class="graph">
-            <p>
-              Steve
-            </p>
-            <p>
-              Gordon
-            </p>
-            <span class="bar_onepercent"></span>
-          </div>
-        </div>
-      </article>
-      <span class="divider"><a href="#">Hide week 2</a></span>
-      <article class="week_3">
-        <h2 class="week_number">
-          <span title="Week 3">3</span>
-        </h2>
-        <span class="divider"><a href="#">Coming 14th September</a></span>
-      </article>
+        <p>
+          Coming 14th September
+        </p>
+      </div>
+      <div class="site_by">
+        <a href="http://primate.co.uk">Site by Primate</a>
+      </div>
     </main>
   </body>
 </html>

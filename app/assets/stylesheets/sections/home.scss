@@ -1,231 +1,163 @@
-nav{
-  z-index: 2; position: relative; padding: $bl*5 0 0 0;
+nav {
+  z-index: 2; position: absolute; top: 0; left: 0; width: 100%; padding: $bl*2 0;
   text-align: center;
-}
 
-nav, main{
-
-  a {
-    @include generate_base_font_styles($montserrat_bold);
-    @include add_antialias;
+  .link {
+    @include elm-underlined_h3_link($divider_grey);
     clear:both;
-    padding-bottom: calculate_em(18, $bl_px*0.5);
-    font-size: px2em(18); text-decoration: none; color: white;
-    border-bottom: 0.2em solid white;
-    transition: padding .4s, color .4s, border-color .4s;
-
-    &:hover {
-      padding-bottom: 0;
-      color: $grey;
-      border-color: $grey;
-    }
   }
 }
 
-main{
+main {
+  height: 100%;
+
   span.divider{
-    &:after{ @extend %divider_small; margin-top:3em; }
+    &:after{ @extend %divider_small;}
   }
 }
 
-
-header {
-  z-index: 1; position: relative;
-  text-align: center;
-
-  h1 {
-    position: relative; padding: $bl*5.7 0 0 0;
-
-    .text {
-      @extend %header_1;
-      z-index: 2; display: block; position: relative; margin: 0 auto; max-width: 6em; margin-bottom: 0.5em;
-    }
-    .number {
-      @include generate_base_font_styles($montserrat_light);
-      z-index: 1; display: block; position: absolute; left: 0; top: 0; width: 100%;
-      font-size: px2em(200); line-height: 1; color: $red;
-    }
-
-    &:after{
-      @extend %divider_small;
-      margin-top:2em;
-    }
-  }
-
-  //** SMALL **
-  @include respond-to(34em) {
-
-    h1 {
-      padding-top: $bl*7.5;
-
-      .text{
-
-      }
-
-      .number { font-size: 16px; line-height: 1; }
-      .number {
-        font-size: px2em(300); line-height: 1;
-      }
-    }
-  }
-
-  // ** MEDIUM **
-  @include respond-to($medium) {
-
-
-    h1 {
-      padding-top: $bl*14;
-
-      .text{
-        &:after{
-          margin-top:1em;
-          height:200px;
-        }
-      }
-
-      .number { font-size: 16px; line-height: 1; }
-      .number {
-        font-size: px2em(500); line-height: 1;
-      }
-    }
-  }
-
-  //** LARGE **
-  @include respond-to($large) {
-
-
-    h1 {
-      padding-top: $bl*16;
-
-      .text{ margin-bottom: 0; }
-
-      .number { font-size: 16px; line-height: 1; }
-      .number {
-        font-size: px2em(636); line-height: 1;
-      }
-    }
-  }
-}
-
-.introduction {
-
-  h2 {
-    @extend %header_2;
-    text-align: center;
-  }
-}
-
+// ****************************************************************
+// ARTICLE
+// The wrapper which has the week number, and both Steve's and Gordon's content.
+// ****************************************************************
 article{
-  position:relative; overflow: hidden;
+  position: relative; overflow: hidden;
   text-align: center;
 
-  .week_number {
+  &:after { @extend %divider_small; }
 
-    span {
-      @include generate_base_font_styles($montserrat_light);
-      font-size: px2em(150); line-height: 1; color: $red;
+  // JS ENABLED
+  &.js_enabled {
+
+    .read_more { // Javascript enabled toggle
+      
+      a {
+        @include elm-underlined_h3_link;
+        display: inline-block; margin: 0;
+      }
     }
-
-    // &:after{
-    //   @extend %divider_small;
-    // }
   }
 
   // ** MEDIUM **
   @include respond-to($medium) {
-    clear:both;
-    display: flex;
-    flex-flow: row wrap;
-    flex: 3 0px;
+    @include clearfix;
+    position: relative; padding: 0 0 $bl*6 0; margin: 0 auto; width: 80%;
 
-    h1{
-      order:2;
-      width:20%;
-      padding-top:7%;
+    .week_number {
+      z-index: 2; position: absolute; top: 0; left: 0; padding: 2em 0; width: 100%; // Display on top of center line.
+      background: $blue;
+    }
+    .steve,
+    .gordon {
+      z-index: 3; position: relative; // Display on top of center line, and week number.
+      width: 40%;
+    }
+    .steve { float: left; }
+    .gordon { float: right; }
+    .statistics {
+      @include clearfix; 
+      z-index: 2; position: relative; // Display on top of center line
+      padding: $bl*5 0; clear: both;
+      background: $blue;
 
-      .number_week:after{ display: none; }
-      .number_week:before{ display: none; }
+      .statistic {
+        float: left; width: 20%;
+      }
     }
 
+    &:after { display: none; }
+    &:before {
+      content: '';
+      z-index: 2; display: block; position: absolute; top: 0; bottom: 0; left: 50%; margin-left: -0.075em; width: 0.15em;
+      background: $divider_grey;
+    }
+
+    &.js_enabled {
+
+      .read_more {
+        z-index: 2; position: relative; // Display on top of center line
+        top: -$bl*2; padding-bottom: $bl*3; clear: left;
+        background: $blue;
+      }
+    }
   }
 
   // ** LARGE **
   @include respond-to($large) {
 
-
-    h1 {
-      width:24%;
-      padding-top: 6%;
-
-      .number_week { font-size: 16px; line-height: 1; }
-      .number_week {
-        font-size: px2em(214); line-height: 1;
-      }
+    .week_number {
+      margin-top: 2em;
     }
+  }
+}
+
+.week_number {
+
+  span {
+    @include generate_base_font_styles($montserrat_light);
+    font-size: px2em(150); line-height: 1; color: $red;
+  }
+
+  // ** LARGE **
+  @include respond-to($large) {
+
+    span { font-size: 16px; }
+    span {
+      font-size: px2em(200);
+    }
+  }
+}
+
+.coming {
+
+  p {
+    @include elm-underlined_h3;
+  }
+}
+
+.site_by {
+  padding: 0 0 $bl*2 0; margin: $bl*10 0 0;
+
+  a {
+    @extend %para;
+    display: block; text-decoration: none; color: $red;
+
+    &:hover { text-decoration: underline; }
   }
 }
 
 .steve,
 .gordon {
-  margin:0 0 2em;
-  text-align: left;
+  margin-bottom: $bl*6;
 
-  .text { padding: 3em 0; }
-
-  h3 { @extend %header_3; }
   & > img {
-    display: block;
-    margin:0 auto;
-    width: 100%;
-    max-width: 360px;
+    display: block; margin: 0 auto; width: 100%; max-width: 360px;
     border-radius: 50%;
   }
-  & > .text p { @extend %para; }
-  & > .text p:first-of-type { font-size: 16; line-height: 1.3; }
-  & > .text p:first-of-type { @extend %big_para; }
-  & > .text:last-child { margin-bottom: 0; }
 
+  .text {
+    margin: $bl*4 0 0 0;
+    text-align: left;
+
+    h3 { @extend %header_3; }
+    p { 
+      @extend %para;
+
+      &:first-child { @extend %big_para; }
+    }
+
+    &:last-child { margin-bottom: 0; }
+  }
+  
   // ** MEDIUM **
   @include respond-to($medium) {
-    width:40%;
+    margin-bottom: 0; width:40%;
 
     img{ width: 80%; }
-
-    .text:before{
-      content: "";
-      position: absolute;
-      left:50%;
-      margin-left: -1px;
-      width: 2px;
-      height: 100%;
-      background-color: #747c7f;
-    }
   }
 
   // ** LARGE **
   @include respond-to($large) {
     width:38%;
-  }
-}
-
-.steve{
-  @include respond-to($medium) {
-    order:1;
-  }
-}
-
-
-.gordon{
-  @include respond-to($medium) {
-    order:3;
-  }
-}
-
-.stats{
-  @include respond-to($medium) {
-    order:4;
-    width: 100%;
-    background-color:$blue;
-    z-index: 99;
   }
 }

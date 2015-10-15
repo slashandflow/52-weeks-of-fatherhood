@@ -57,7 +57,7 @@ $small: 36em;
 // JAVASCRIP BREAKPOINT ELEMENT
 //*
 #breakpoint_element {
-  position: relative; z-index: 36; // Webkit will not allow z-index to be returned to JS unless positioned
+  position: relative; z-index: 0; // Webkit will not allow z-index to be returned to JS unless positioned
 }
 @include respond-to($medium) { #breakpoint_element { z-index: 52; } }
 @include respond-to($large) { #breakpoint_element { z-index: 71; } }

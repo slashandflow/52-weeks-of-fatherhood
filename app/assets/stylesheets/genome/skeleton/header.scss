@@ -1,0 +1,80 @@
+#header {
+  z-index: 1; position: relative; height: 100%;
+  text-align: center;
+
+  h1 {
+    z-index: 2; position: relative; top: 40%; transform: translateY(-50%);
+    padding: $bl*5.7 0 0 0;
+
+    .text {
+      @extend %header_1;
+      z-index: 2; display: block; position: relative; margin: 0 auto $bl*3; max-width: 6em;
+    }
+    .number {
+      @include generate_base_font_styles($montserrat_light);
+      z-index: 1; display: block; position: absolute; left: 0; top: 0; width: 100%;
+      font-size: px2em(200); line-height: 1; color: $red;
+      background: $blue;
+    }
+  }
+
+  .latest {
+    z-index: 2; position: absolute; bottom: $bl*3; left: 0; padding: $bl*2 0 $bl*2; width: 100%;
+    text-align: center;
+    background: $blue;
+    
+    a { @include elm-underlined_h3_link; }
+  }
+
+  &:after {
+    content: '';
+    z-index: 1; display: block; position: absolute; top: 50%; bottom: 0; left: 50%; margin-left: -0.075em; width: 0.15em;
+    background: $divider_grey;
+  }
+
+  //** SMALL **
+  @include respond-to(34em) {
+
+    h1 {
+      padding-top: $bl*7.5;
+
+      .number { font-size: 16px; line-height: 1; } // Reset to prevent IE em bubbling.
+      .number {
+        font-size: px2em(300); line-height: 1;
+      }
+    }
+  }
+
+  // ** MEDIUM **
+  @include respond-to($medium) {
+
+
+    h1 {
+      padding-top: $bl*14;
+
+      .text:after{
+        margin-top:1em; height:200px;
+      }
+
+      .number { font-size: 16px; line-height: 1; } // Reset to prevent IE em bubbling.
+      .number {
+        font-size: px2em(500); line-height: 1;
+      }
+    }
+  }
+
+  //** LARGE **
+  @include respond-to($large) {
+
+
+    h1 {
+      padding-top: $bl*16;
+
+      .text{ margin-bottom: 0; }
+      .number { font-size: 16px; line-height: 1; } // Reset to prevent IE em bubbling.
+      .number {
+        font-size: px2em(636); line-height: 1;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 doctype html
-html
+html lang="en"
 
   head
     meta http-equiv="Content-Type" content="text/html charset=UTF-8"
@@ -7,21 +7,31 @@ html
 
     link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css"
 
+    script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
+    script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js'
+    script type="text/javascript" src="/javascripts/widgets/week_toggle.widget.js"
+    script type="text/javascript" src="/javascripts/BreakpointDetection.js"
+    script type="text/javascript" src="/javascripts/application.js"
+
 
   body
 
     main
 
       nav
-        a href="#" About
+        .link
+          a href="about.html" About
 
-      header
+      header#header
 
         h1
           span.number 52
           span.text weeks of fatherhood
 
-      article.week_1
+        .latest
+          a href="#week1" View latest
+
+      article.week#week1 data-week-number="1"
 
         h2.week_number
           span title="Week 1" 1
@@ -42,83 +52,106 @@ html
             p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
         .gordon
-          img src="/images/gordon.jpg" alt="Kinto McLachlan at 1 week old"
+          img src="/images/kento-week-1.jpg" alt="Kento McLachlan at 1 week old"
           .text
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi.
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            p Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            h3 The Best thing?
-            p Fusce vel accumsan nulla.
-            h3 The worst thing?
-            p Pellentesque convallis tellus eu leo porttitor pharetra.
+            h3 What happened this week?
+            p It’s not that bad.
+            p I’d heard labour described as “Apocalypse Now” and “the Exorcist in real life”. Even the midwife referred to the Labour Ward as a “torture chamber” when we heard screams - and I mean SCREAMS - emanating from down the hall. But the true is, it was all pretty painless and straightforward, my body and mind leaving the hospital healthy and intact (I can’t say the same for the Wife’s vagina). Honestly, if I had to describe labour in one word, I would say ‘boring’.
+
+            p Of course, I was expecting to be utterly traumatised so it helps that I ended up only being mildly inconvenienced. Well, they do say ‘prepare for the worst and every surprise will be a pleasant one’. Pessimism won the day here.
+
+            h3 What was the best thing?
+            p Realising my life wasn’t over just because I now have to carry a screaming, shitting, crying rock with me everywhere I go.
+
+            h3 What was the worst thing?
+            p Taking a peak down at the business end during delivery. The Wife’s vagina had split open like a wet paper bag trying to hold a watermelon. I’ll never forget seeing the Boy’s head poking out, clamped with forceps as the doc tugged him into reality. Fortunately the Wife was too drugged up to notice.
+
+            p It’s going to be a while before I visit down there again.
+
             h3 What have you learnt?
-            p Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            h3 Additional comments
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+            p Epidurals are gifts from God and anaesthetists the angels who deliver them.
 
-        .stats
-          .graph
-            p Steve
-            p Gordon
-            span.bar_onepercent
+            h3 Any additional comments?
+            p I suppose I’d better get used to the notion that I now need to care for another human being. Responsibility and provision are a couple of words that spring to mind. It’s time I realise that fatherhood has started.
 
-      span.divider
-        a href="#" Hide week 1
+            p Fuck.
 
+        .statistics
 
-      article.week_2
+          div.statistic
+            h3.title Nappies changed
+            span.baseline Baseline 70 w/k
+
+            .top
+              h4.amount Steve 59
+              .percentage_bar
+                .bar.percent_80
+            .bottom
+              .percentage_bar
+                .bar.percent_0
+              h4.amount Gordon 0
+
+          div.statistic
+            h3.title Hours sleep
+            span.baseline Baseline 70 w/k
+
+            .top
+              h4.amount Steve 59
+              .percentage_bar
+                .bar.percent_80
+            .bottom
+              .percentage_bar
+                .bar.percent_52
+              h4.amount Gordon 52
+
+          div.statistic
+            h3.title Time to yourself
+            span.baseline Baseline 70 w/k
+
+            .top
+              h4.amount Steve 59
+              .percentage_bar
+                .bar.percent_80
+            .bottom
+              .percentage_bar
+                .bar.percent_35
+              h4.amount Gordon 35
+
+          div.statistic
+            h3.title Happiness
+            span.baseline 0 - 10
+
+            .top
+              h4.amount Steve 5
+              .percentage_bar
+                .bar.percent_80
+            .bottom
+              .percentage_bar
+                .bar.percent_90
+              h4.amount Gordon 9
+
+          div.statistic
+            h3.title Stress
+            span.baseline 0 - 10
+
+            .top
+              h4.amount Steve 5
+              .percentage_bar
+                .bar.percent_80
+            .bottom
+              .percentage_bar
+                .bar.percent_30
+              h4.amount Gordon 3
+              
+
+      .coming#week4
 
         h2.week_number
           span title="Week 2" 2
 
-        .steve
-          img src="/images/steve.jpg" alt="Libert Grace Brown at 1 week old"
-          .text
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi.
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            p Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            h3 The Best thing?
-            p Fusce vel accumsan nulla.
-            h3 The worst thing?
-            p Pellentesque convallis tellus eu leo porttitor pharetra.
-            h3 What have you learnt?
-            p Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            h3 Additional comments
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        p Coming 14th September
 
-        .gordon
-          img src="/images/gordon.jpg" alt="Kinto McLachlan at 1 week old"
-          .text
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi.
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-            p Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            h3 The Best thing?
-            p Fusce vel accumsan nulla.
-            h3 The worst thing?
-            p Pellentesque convallis tellus eu leo porttitor pharetra.
-            h3 What have you learnt?
-            p Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam eleifend augue vel velit blandit malesuada. Nunc nec turpis lorem.
-            h3 Additional comments
-            p Fusce vel accumsan nulla. Pellentesque convallis tellus eu leo porttitor pharetra. Nulla facilisi. Aliquam bibendum nunc ut hendrerit vehicula. Proin tempor tincidunt risus ut mattis. Nullam at nisi pharetra, gravida eros ut, iaculis mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      .site_by
 
-        .stats
-          .graph
-            p Steve
-            p Gordon
-            span.bar_onepercent
-
-      span.divider
-        a href="#" Hide week 2
-
-      article.week_3
-
-        h2.week_number
-          span title="Week 3" 3
-
-        span.divider
-          a href="#" Coming 14th September
-
-
-
-
-
+        a href="http://primate.co.uk" Site by Primate
+        

@@ -119,7 +119,7 @@ $para: map-merge($para, $montserrat_light);
 //----------------- BIG PARA ----------------- //
 $big_para: (
   name: 'big_para',
-  size_px: 24, line_height_baseline: 5, margin_bottom_baseline: 3,
+  size_px: 24, line_height_baseline: 3.2, margin_bottom_baseline: 3,
   color: white, font_antialiased: true
 );
 $big_para: map-merge($big_para, $montserrat_bold);

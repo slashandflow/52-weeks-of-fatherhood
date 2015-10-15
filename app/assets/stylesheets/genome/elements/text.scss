@@ -1,0 +1,23 @@
+@mixin elm-underlined_h3($color: white) {
+  @extend %header_3;
+  display: inline-block; padding-bottom: vertical_spacing($header_3, $bl_px*0.25); margin: 0;
+  text-decoration: none; color: $color;
+  border-bottom: 0.2em solid $color;
+}
+
+@mixin elm-underlined_h3_link($color: white) {
+  @include elm-underlined_h3($color);
+  transition: padding .4s;
+
+  a {
+    text-decoration: none; color: $color;
+    transition: color .4s, border-color .4s;
+
+    &:hover { color: $grey; }
+  }
+
+  &:hover { 
+    padding-bottom: 0;
+    border-color: $grey;
+  }
+}
