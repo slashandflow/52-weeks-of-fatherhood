@@ -3,7 +3,7 @@
   text-align: center;
 
   h1 {
-    z-index: 2; position: relative; top: 40%; transform: translateY(-50%);
+    z-index: 2; position: absolute; top: 50%; width: 100%; transform: translateY(-50%);
     padding: $bl*5.7 0 0 0;
 
     .text {
@@ -22,7 +22,7 @@
     z-index: 2; position: absolute; bottom: $bl*3; left: 0; padding: $bl*2 0 $bl*2; width: 100%;
     text-align: center;
     background: $blue;
-    
+
     a { @include elm-underlined_h3_link; }
   }
 
@@ -30,6 +30,19 @@
     content: '';
     z-index: 1; display: block; position: absolute; top: 50%; bottom: 0; left: 50%; margin-left: -0.075em; width: 0.15em;
     background: $divider_grey;
+  }
+
+  .about_page & {
+
+    h1 { top: 40%; }
+    h2 {
+      @extend %header_1;
+      z-index: 2; display: block; position: absolute; bottom: 10%; padding: 0.2em 0; width: 100%;
+      text-align: center; color: $red;
+      background: $blue;
+
+      span { display: block; }
+    }
   }
 
   //** SMALL **
@@ -61,11 +74,20 @@
         font-size: px2em(500); line-height: 1;
       }
     }
+
+    .about_page & {
+      font-size: 10px;
+
+      h2 span {
+        display: inline; margin-left: 0.2em;
+
+        &:first-child { margin-left: 0; }
+      }
+    }
   }
 
   //** LARGE **
   @include respond-to($large) {
-
 
     h1 {
       padding-top: $bl*16;
@@ -76,5 +98,7 @@
         font-size: px2em(636); line-height: 1;
       }
     }
+
+
   }
 }
