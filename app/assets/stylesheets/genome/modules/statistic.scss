@@ -12,13 +12,13 @@
   }
   .baseline { 
     @extend %para;
-    display: block;
+    display: block; margin-bottom: vertical_spacing($para, $bl_px);
   }
   .percentage_bar {
     display: block; margin: $bl*0.75 auto; width: 85%; 
 
     .bar {
-      display: block; margin: 0 auto; height: 0.25em;
+      display: block; margin: 0 auto; height: 0.3em;
       background: $red;
     }
     @for $i from 0 through 100 {

@@ -23,7 +23,7 @@
     text-align: center;
     background: $blue;
 
-    a { @include elm-underlined_h3_link; }
+    a { @include elm-header_link; }
   }
 
   &:after {
@@ -58,6 +58,12 @@
     }
   }
 
+  // ** VERTICAL BREAKPOIT - MEDIUM WIDTH **
+  @media only screen and (max-width: $medium) and (max-height: 26.8em) {
+
+    h1 { font-size: 8px; }
+  }
+
   // ** MEDIUM **
   @include respond-to($medium) {
 
@@ -86,11 +92,17 @@
     }
   }
 
+  // ** VERTICAL BREAKPOIT - MEDIUM WIDTH **
+  @media only screen and (min-width: $medium) and (max-width: $large) and (max-height: 41em) {
+
+    h1 { font-size: 10px; }
+  }
+
   //** LARGE **
   @include respond-to($large) {
 
     h1 {
-      padding-top: $bl*16;
+      top: 40%; padding-top: $bl*16;
 
       .text{ margin-bottom: 0; }
       .number { font-size: 16px; line-height: 1; } // Reset to prevent IE em bubbling.
@@ -98,7 +110,19 @@
         font-size: px2em(636); line-height: 1;
       }
     }
+  }
 
+  // ** VERTICAL BREAKPOIT - LARGE WIDTH **
+  @media only screen and (min-width: $large) and (max-height: 55em) {
 
+    h1 { font-size: 14px; }
+  }
+  @media only screen and (min-width: $large) and (max-height: 49em) {
+
+    h1 { font-size: 12px; }
+  }
+  @media only screen and (min-width: $large) and (max-height: 43.75em) {
+
+    h1 { font-size: 10px; }
   }
 }

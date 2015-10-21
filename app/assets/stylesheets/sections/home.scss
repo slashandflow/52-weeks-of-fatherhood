@@ -3,8 +3,8 @@ nav {
   text-align: center;
 
   .link {
-    @include elm-underlined_h3_link($divider_grey);
     clear:both;
+    a { @include elm-header_link($divider_grey); }
   }
 }
 
@@ -23,6 +23,13 @@ main {
 article{
   position: relative; overflow: hidden;
   text-align: center;
+
+  .statistics {
+
+    & > .statistic { 
+      margin: 0 auto $bl*7; max-width: 20em;
+    }
+  }
 
   &:after { @extend %divider_small; }
 
@@ -54,15 +61,12 @@ article{
     }
     .steve { float: left; }
     .gordon { float: right; }
-    .statistics {
-      @include clearfix; 
-      z-index: 2; position: relative; // Display on top of center line
-      padding: $bl*5 0; clear: both;
+    .statistics { 
+      z-index: 2; position: relative; clear: both; // Display on top of center line
+      padding: $bl*5 0 $bl*5;
       background: $blue;
 
-      .statistic {
-        float: left; width: 20%;
-      }
+      & > .statistic:last-child { margin-bottom: 0; }
     }
 
     &:after { display: none; }
@@ -87,6 +91,17 @@ article{
 
     .week_number {
       margin-top: 2em;
+    }
+
+    .statistics {
+      @include clearfix; 
+      z-index: 2; position: relative; // Display on top of center line
+      padding: $bl*5 0; clear: both;
+      background: $blue;
+
+      .statistic {
+        float: left; width: 20%;
+      }
     }
   }
 }

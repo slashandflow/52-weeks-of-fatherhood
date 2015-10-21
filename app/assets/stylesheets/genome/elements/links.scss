@@ -1,0 +1,19 @@
+// HEADER LINK
+@mixin elm-header_link($color: white) {
+  @include generate_base_font_styles($montserrat_bold);
+  @include add_antialias;
+  display: inline-block; position: relative; padding-bottom: calculate_em(16, $bl_px*0.25); margin: 0;
+  font-size: px2em(16); line-height: 1; text-decoration: none; color: $color;
+  border-bottom: 0.2em solid $color;
+  transition: padding .4s;
+
+  &:hover { 
+    padding-bottom: 0;
+  }
+
+  // ** MEDIUM **
+  @include respond-to($medium) {
+    padding-bottom: calculate_em(18, $bl_px*0.25);
+    font-size: px2em(18); line-height: calculate_em(18, $bl_px*2.6);
+  }
+}

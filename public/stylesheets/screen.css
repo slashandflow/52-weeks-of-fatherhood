@@ -235,7 +235,7 @@ textarea {
   .wf-firasans-n4-active .introduction h2, .introduction .wf-firasans-n4-active h2 {
     font-family: "montserratbold", sans-serif; }
 
-#header .latest a, .statistic .title, nav .link, article.js_enabled .read_more a, .coming p, .steve .text h3,
+.statistic .title, article.js_enabled .read_more a, .coming p, .steve .text h3,
 .gordon .text h3 {
   font-family: "montserratbold", sans-serif;
   font-size: 1.125em;
@@ -246,7 +246,7 @@ textarea {
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
-  .wf-firasans-n4-active #header .latest a, #header .latest .wf-firasans-n4-active a, .wf-firasans-n4-active .statistic .title, .statistic .wf-firasans-n4-active .title, .wf-firasans-n4-active nav .link, nav .wf-firasans-n4-active .link, .wf-firasans-n4-active article.js_enabled .read_more a, article.js_enabled .read_more .wf-firasans-n4-active a, .wf-firasans-n4-active .coming p, .coming .wf-firasans-n4-active p, .wf-firasans-n4-active .steve .text h3, .steve .text .wf-firasans-n4-active h3,
+  .wf-firasans-n4-active .statistic .title, .statistic .wf-firasans-n4-active .title, .wf-firasans-n4-active article.js_enabled .read_more a, article.js_enabled .read_more .wf-firasans-n4-active a, .wf-firasans-n4-active .coming p, .coming .wf-firasans-n4-active p, .wf-firasans-n4-active .steve .text h3, .steve .text .wf-firasans-n4-active h3,
   .wf-firasans-n4-active .gordon .text h3,
   .gordon .text .wf-firasans-n4-active h3 {
     font-family: "montserratbold", sans-serif; }
@@ -344,22 +344,31 @@ main span.divider:after, article:after {
     text-align: center;
     background: #1b2b31; }
     #header .latest a {
+      font-family: "montserratbold", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       display: inline-block;
-      padding-bottom: 0.13889em;
+      position: relative;
+      padding-bottom: 0.15625em;
       margin: 0;
+      font-size: 1em;
+      line-height: 1;
       text-decoration: none;
       color: white;
       border-bottom: 0.2em solid white;
-      transition: padding .4s; }
-      #header .latest a a {
-        text-decoration: none;
-        color: white;
-        transition: color .4s, border-color .4s; }
-        #header .latest a a:hover {
-          color: #cccccc; }
+      -webkit-transition: padding .4s;
+              transition: padding .4s; }
+      .wf-firasans-n4-active #header .latest a {
+        font-family: "montserratbold", sans-serif; }
       #header .latest a:hover {
-        padding-bottom: 0;
-        border-color: #cccccc; }
+        padding-bottom: 0; }
+      @media only screen and (min-width: 52em) {
+        #header .latest a {
+          padding-bottom: 0.13889em;
+          font-size: 1.125em;
+          line-height: 1.44444em; } }
   #header:after {
     content: '';
     z-index: 1;
@@ -394,6 +403,9 @@ main span.divider:after, article:after {
       #header h1 .number {
         font-size: 18.75em;
         line-height: 1; } }
+  @media only screen and (max-width: 52em) and (max-height: 26.8em) {
+    #header h1 {
+      font-size: 8px; } }
   @media only screen and (min-width: 52em) {
     #header h1 {
       padding-top: 8.75em; }
@@ -413,8 +425,12 @@ main span.divider:after, article:after {
         margin-left: 0.2em; }
         .about_page #header h2 span:first-child {
           margin-left: 0; } }
+  @media only screen and (min-width: 52em) and (max-width: 71em) and (max-height: 41em) {
+    #header h1 {
+      font-size: 10px; } }
   @media only screen and (min-width: 71em) {
     #header h1 {
+      top: 40%;
       padding-top: 10em; }
       #header h1 .text {
         margin-bottom: 0; }
@@ -424,6 +440,15 @@ main span.divider:after, article:after {
       #header h1 .number {
         font-size: 39.75em;
         line-height: 1; } }
+  @media only screen and (min-width: 71em) and (max-height: 55em) {
+    #header h1 {
+      font-size: 14px; } }
+  @media only screen and (min-width: 71em) and (max-height: 49em) {
+    #header h1 {
+      font-size: 12px; } }
+  @media only screen and (min-width: 71em) and (max-height: 43.75em) {
+    #header h1 {
+      font-size: 10px; } }
 
 .statistic {
   text-align: center; }
@@ -441,7 +466,8 @@ main span.divider:after, article:after {
     .wf-firasans-n4-active .statistic .amount {
       font-family: "montserratbold", sans-serif; }
   .statistic .baseline {
-    display: block; }
+    display: block;
+    margin-bottom: 0.625em; }
   .statistic .percentage_bar {
     display: block;
     margin: 0.46875em auto;
@@ -449,7 +475,7 @@ main span.divider:after, article:after {
     .statistic .percentage_bar .bar {
       display: block;
       margin: 0 auto;
-      height: 0.25em;
+      height: 0.3em;
       background: #a84937; }
     .statistic .percentage_bar .bar.percent_0 {
       width: 0%; }
@@ -684,23 +710,33 @@ nav {
   padding: 1.25em 0;
   text-align: center; }
   nav .link {
-    display: inline-block;
-    padding-bottom: 0.13889em;
-    margin: 0;
-    text-decoration: none;
-    color: #747c7f;
-    border-bottom: 0.2em solid #747c7f;
-    transition: padding .4s;
     clear: both; }
     nav .link a {
+      font-family: "montserratbold", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+      position: relative;
+      padding-bottom: 0.15625em;
+      margin: 0;
+      font-size: 1em;
+      line-height: 1;
       text-decoration: none;
       color: #747c7f;
-      transition: color .4s, border-color .4s; }
+      border-bottom: 0.2em solid #747c7f;
+      -webkit-transition: padding .4s;
+              transition: padding .4s; }
+      .wf-firasans-n4-active nav .link a {
+        font-family: "montserratbold", sans-serif; }
       nav .link a:hover {
-        color: #cccccc; }
-    nav .link:hover {
-      padding-bottom: 0;
-      border-color: #cccccc; }
+        padding-bottom: 0; }
+      @media only screen and (min-width: 52em) {
+        nav .link a {
+          padding-bottom: 0.13889em;
+          font-size: 1.125em;
+          line-height: 1.44444em; } }
 
 main {
   height: 100%; }
@@ -709,6 +745,9 @@ article {
   position: relative;
   overflow: hidden;
   text-align: center; }
+  article .statistics > .statistic {
+    margin: 0 auto 4.375em;
+    max-width: 20em; }
   article.js_enabled .read_more a {
     display: inline-block;
     padding-bottom: 0.13889em;
@@ -716,13 +755,15 @@ article {
     text-decoration: none;
     color: white;
     border-bottom: 0.2em solid white;
-    transition: padding .4s;
+    -webkit-transition: padding .4s;
+            transition: padding .4s;
     display: inline-block;
     margin: 0; }
     article.js_enabled .read_more a a {
       text-decoration: none;
       color: white;
-      transition: color .4s, border-color .4s; }
+      -webkit-transition: color .4s, border-color .4s;
+              transition: color .4s, border-color .4s; }
       article.js_enabled .read_more a a:hover {
         color: #cccccc; }
     article.js_enabled .read_more a:hover {
@@ -753,15 +794,13 @@ article {
       article .gordon {
         float: right; }
       article .statistics {
-        overflow: hidden;
         z-index: 2;
         position: relative;
-        padding: 3.125em 0;
         clear: both;
+        padding: 3.125em 0 3.125em;
         background: #1b2b31; }
-        article .statistics .statistic {
-          float: left;
-          width: 20%; }
+        article .statistics > .statistic:last-child {
+          margin-bottom: 0; }
       article:after {
         display: none; }
       article:before {
@@ -784,7 +823,17 @@ article {
         background: #1b2b31; } }
   @media only screen and (min-width: 71em) {
     article .week_number {
-      margin-top: 2em; } }
+      margin-top: 2em; }
+    article .statistics {
+      overflow: hidden;
+      z-index: 2;
+      position: relative;
+      padding: 3.125em 0;
+      clear: both;
+      background: #1b2b31; }
+      article .statistics .statistic {
+        float: left;
+        width: 20%; } }
 
 .week_number span {
   font-family: "montserratlight", sans-serif;
