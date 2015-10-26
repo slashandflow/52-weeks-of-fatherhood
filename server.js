@@ -2,7 +2,7 @@
  * Static HTTP Server
  *
  * Create a static file server instance to serve files
- * and folder in the './public' folder
+ * and folder in the './server' folder
  */
 
 // modules
@@ -11,7 +11,7 @@ var static = require( 'node-static' ),
     http = require( 'http' );
 
 // config
-var file = new static.Server( './public', {
+var file = new static.Server( './server', {
     cache: 3600,
     gzip: true
 } );

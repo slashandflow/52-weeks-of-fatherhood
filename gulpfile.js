@@ -24,13 +24,13 @@ var gulp = require('gulp'),
 var project_base_directory = '.';
 var paths = {
   scripts_in: [project_base_directory+'/app/assets/javascripts/**/*.coffee'],
-  scripts_out: project_base_directory+'/public/javascripts',
+  scripts_out: project_base_directory+'/server/javascripts',
   sass_watch: [project_base_directory+'/app/assets/stylesheets/**/**/**'],
   sass_in: [project_base_directory+'/app/assets/stylesheets/*.scss'],
-  sass_out: project_base_directory+'/public/stylesheets',
+  sass_out: project_base_directory+'/server/stylesheets',
   slim_in: project_base_directory+'/app/views/*.slim',
-  public_assets: [project_base_directory+'/public/**'],
-  font_assets: [project_base_directory+'/public/fonts/**']
+  public_assets: [project_base_directory+'/server/**'],
+  font_assets: [project_base_directory+'/server/fonts/**']
 };
 
 
@@ -42,7 +42,7 @@ gulp.task('slim', function(){
     .pipe(slim({
       pretty: true
     }))
-    .pipe(gulp.dest("./public/"));
+    .pipe(gulp.dest("./server/"));
 });
 
 
@@ -63,7 +63,7 @@ gulp.task('scripts-development', function(){
 });
 gulp.task('scripts-production', function(){
 
-  return gulp.src(project_base_directory+'/public/javascripts/**/*.js')
+  return gulp.src(project_base_directory+'/server/javascripts/**/*.js')
     .pipe(order([
       'vendor/*.js',
       'widgets/*.js',
@@ -166,7 +166,7 @@ gulp.task('assets-to-s3', function() {
 // When updating production assets, we must delete the production Javascript.
 //**********************************************************************
 gulp.task('delete-production', function(){
-  return gulp.src(project_base_directory+'/public/javascripts/production/production.js', { read: false }) // much faster
+  return gulp.src(project_base_directory+'/server/javascripts/production/production.js', { read: false }) // much faster
     .pipe(rimraf({ force: true }));
 });
 
