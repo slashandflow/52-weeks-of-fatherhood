@@ -43,6 +43,10 @@
 
       span { display: block; }
     }
+
+    &:after {
+      margin-left: -0.15em; width: 0.3em;
+    }
   }
 
   //** SMALL **
@@ -108,6 +112,14 @@
       .number { font-size: 16px; line-height: 1; } // Reset to prevent IE em bubbling.
       .number {
         font-size: px2em(636); line-height: 1;
+      }
+    }
+
+    .about_page & {
+
+      h1 { 
+        top: 30%;
+        font-size: 8px;
       }
     }
   }

@@ -15,12 +15,12 @@ $(function() {
     current_congfig = '';
     if (page_width_on_load >= BP_MEDIUM) {
       $('article.week').not(':last-of-type').week_toggle({
-        hidden_selectors: '.text'
+        hidden_selectors: '.text, .statistics, .header h3'
       });
       current_congfig = 'desktop';
     } else {
       $('article.week').not(':last-of-type').week_toggle({
-        hidden_selectors: '.steve, .gordon',
+        hidden_selectors: '.steve, .gordon, .statistics',
         speed: 800
       });
       expand_enabled = true;
@@ -30,14 +30,14 @@ $(function() {
       if ((page_width >= BP_MEDIUM) && (current_congfig !== 'desktop')) {
         $('article.week').not(':last-of-type').week_toggle('destroy');
         $('article.week').not(':last-of-type').week_toggle({
-          hidden_selectors: '.text'
+          hidden_selectors: '.text, .statistics'
         });
         current_congfig = 'desktop';
       }
       if ((page_width < BP_MEDIUM) && (current_congfig !== 'mobile')) {
         $('article.week').not(':last-of-type').week_toggle('destroy');
         $('article.week').not(':last-of-type').week_toggle({
-          hidden_selectors: '.steve, .gordon',
+          hidden_selectors: '.steve, .gordon, .statistics',
           speed: 800
         });
         return current_congfig = 'mobile';

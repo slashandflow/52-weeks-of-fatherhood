@@ -27,11 +27,11 @@ $ ->
 
     if page_width_on_load >= BP_MEDIUM
       $('article.week').not(':last-of-type').week_toggle
-        hidden_selectors: '.text'
+        hidden_selectors: '.text, .statistics, .header h3'
       current_congfig = 'desktop'
     else
       $('article.week').not(':last-of-type').week_toggle
-        hidden_selectors: '.steve, .gordon'
+        hidden_selectors: '.steve, .gordon, .statistics'
         speed: 800
       expand_enabled = true
       current_congfig = 'mobile'
@@ -46,7 +46,7 @@ $ ->
         
         # The re-instate the desktop config
         $('article.week').not(':last-of-type').week_toggle
-          hidden_selectors: '.text'
+          hidden_selectors: '.text, .statistics'
         current_congfig = 'desktop'
 
 
@@ -57,7 +57,7 @@ $ ->
         
         # The re-instate the desktop config
         $('article.week').not(':last-of-type').week_toggle
-          hidden_selectors: '.steve, .gordon'
+          hidden_selectors: '.steve, .gordon, .statistics'
           speed: 800
         current_congfig = 'mobile'
 

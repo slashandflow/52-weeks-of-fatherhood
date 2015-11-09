@@ -1,7 +1,23 @@
-.introduction {
+.about_page {
 
-  h2 {
-    @extend %header_2;
-    text-align: center;
+  article { padding-top: $mobile_vert_padding; }
+  .introduction {
+    padding: $bl*3 0;
+    background: $blue;
+    
+    p {
+      @include generate_base_font_styles($montserrat_light);
+      @include add_antialias;
+      margin: 0 auto calculate_em(24, $bl_px*2); max-width: 36em;
+      font-size: px2em(24); line-height: calculate_em(24, $bl_px*3.2);
+
+      &:last-child { margin-bottom: 0; }
+    }
+  }
+
+  // ** MEDIUM **
+  @include respond-to($medium) {
+
+    article { padding-top: $medium_vert_padding; }
   }
 }

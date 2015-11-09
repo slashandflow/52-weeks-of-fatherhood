@@ -80,7 +80,7 @@ article{
 
       .read_more {
         z-index: 2; position: relative; // Display on top of center line
-        top: -$bl*2; padding-bottom: $bl*3; clear: left;
+        top: -$bl*6.5; padding: $bl 0 $bl*6; clear: left;
         background: $blue;
       }
     }
@@ -145,16 +145,41 @@ article{
 .gordon {
   margin-bottom: $bl*6;
 
-  & > img {
-    display: block; margin: 0 auto; width: 100%; max-width: 360px;
-    border-radius: 50%;
+  .header {
+    position: relative;
+    text-align: center;
+
+    h3 {
+      @include generate_base_font_styles($montserrat_bold);
+      z-index: 2; position: absolute; top: 50%; left: 50%; transform: translateY(-50%); margin-left: -2.5em; width: 5em;
+      text-align: center; font-size: px2em(40); color: white;
+      opacity: 1;
+      transition: opacity .2s;
+    }
+    .image {
+      z-index: 1; display: block; position: relative;  margin: 0 auto; width: 100%; max-width: 360px; overflow: hidden;
+      border-radius: 50%;
+
+      img { 
+        width: 100%; vertical-align: top;
+      }
+
+      &:before {
+        content: '';
+        display: block; position: absolute; top: 0; left: 0; bottom: 0; width: 100%; 
+        background: black; opacity: 0.3; border-radius: 50%;
+      }
+    }
+
+    &:hover h3 { opacity: 0; }
   }
 
   .text {
     margin: $bl*4 0 0 0;
     text-align: left;
 
-    h3 { @extend %header_3; }
+    h3,
+    h4 { @extend %header_3; }
     p { 
       @extend %para;
 

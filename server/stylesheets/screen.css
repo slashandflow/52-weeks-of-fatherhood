@@ -222,21 +222,10 @@ textarea {
       font-size: 9.8125em;
       line-height: 1.04459em; } }
 
-.introduction h2 {
-  font-family: "montserratbold", sans-serif;
-  font-size: 6.25em;
-  line-height: 1em;
-  font-weight: 700;
-  font-style: normal;
-  margin: 0 0 0em 0;
-  color: #a84937;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  .wf-firasans-n4-active .introduction h2, .introduction .wf-firasans-n4-active h2 {
-    font-family: "montserratbold", sans-serif; }
-
 .statistic .title, article.js_enabled .read_more a, .coming p, .steve .text h3,
-.gordon .text h3 {
+.steve .text h4,
+.gordon .text h3,
+.gordon .text h4 {
   font-family: "montserratbold", sans-serif;
   font-size: 1.125em;
   line-height: 1.44444em;
@@ -247,8 +236,12 @@ textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   .wf-firasans-n4-active .statistic .title, .statistic .wf-firasans-n4-active .title, .wf-firasans-n4-active article.js_enabled .read_more a, article.js_enabled .read_more .wf-firasans-n4-active a, .wf-firasans-n4-active .coming p, .coming .wf-firasans-n4-active p, .wf-firasans-n4-active .steve .text h3, .steve .text .wf-firasans-n4-active h3,
+  .wf-firasans-n4-active .steve .text h4,
+  .steve .text .wf-firasans-n4-active h4,
   .wf-firasans-n4-active .gordon .text h3,
-  .gordon .text .wf-firasans-n4-active h3 {
+  .gordon .text .wf-firasans-n4-active h3,
+  .wf-firasans-n4-active .gordon .text h4,
+  .gordon .text .wf-firasans-n4-active h4 {
     font-family: "montserratbold", sans-serif; }
 
 .statistic .baseline, .site_by a, .steve .text p,
@@ -394,6 +387,9 @@ main span.divider:after, article:after {
     background: #1b2b31; }
     .about_page #header h2 span {
       display: block; }
+  .about_page #header:after {
+    margin-left: -0.15em;
+    width: 0.3em; }
   @media only screen and (min-width: 34em) {
     #header h1 {
       padding-top: 4.6875em; }
@@ -439,7 +435,10 @@ main span.divider:after, article:after {
         line-height: 1; }
       #header h1 .number {
         font-size: 39.75em;
-        line-height: 1; } }
+        line-height: 1; }
+    .about_page #header h1 {
+      top: 30%;
+      font-size: 8px; } }
   @media only screen and (min-width: 71em) and (max-height: 55em) {
     #header h1 {
       font-size: 14px; } }
@@ -817,8 +816,8 @@ article {
       article.js_enabled .read_more {
         z-index: 2;
         position: relative;
-        top: -1.25em;
-        padding-bottom: 1.875em;
+        top: -4.0625em;
+        padding: 0.625em 0 3.75em;
         clear: left;
         background: #1b2b31; } }
   @media only screen and (min-width: 71em) {
@@ -871,13 +870,62 @@ article {
 .steve,
 .gordon {
   margin-bottom: 3.75em; }
-  .steve > img,
-  .gordon > img {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 360px;
-    border-radius: 50%; }
+  .steve .header,
+  .gordon .header {
+    position: relative;
+    text-align: center; }
+    .steve .header h3,
+    .gordon .header h3 {
+      font-family: "montserratbold", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      z-index: 2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+              transform: translateY(-50%);
+      margin-left: -2.5em;
+      width: 5em;
+      text-align: center;
+      font-size: 2.5em;
+      color: white;
+      opacity: 1;
+      -webkit-transition: opacity .2s;
+              transition: opacity .2s; }
+      .wf-firasans-n4-active .steve .header h3, .wf-firasans-n4-active
+      .gordon .header h3 {
+        font-family: "montserratbold", sans-serif; }
+    .steve .header .image,
+    .gordon .header .image {
+      z-index: 1;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 360px;
+      overflow: hidden;
+      border-radius: 50%; }
+      .steve .header .image img,
+      .gordon .header .image img {
+        width: 100%;
+        vertical-align: top; }
+      .steve .header .image:before,
+      .gordon .header .image:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: black;
+        opacity: 0.3;
+        border-radius: 50%; }
+    .steve .header:hover h3,
+    .gordon .header:hover h3 {
+      opacity: 0; }
   .steve .text,
   .gordon .text {
     margin: 2.5em 0 0 0;
@@ -898,5 +946,25 @@ article {
     .gordon {
       width: 38%; } }
 
-.introduction h2 {
-  text-align: center; }
+.about_page article {
+  padding-top: 1.875em; }
+.about_page .introduction {
+  padding: 1.875em 0;
+  background: #1b2b31; }
+  .about_page .introduction p {
+    font-family: "montserratlight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto 0.83333em;
+    max-width: 36em;
+    font-size: 1.5em;
+    line-height: 1.33333em; }
+    .wf-firasans-n4-active .about_page .introduction p {
+      font-family: "montserratlight", sans-serif; }
+    .about_page .introduction p:last-child {
+      margin-bottom: 0; }
+@media only screen and (min-width: 52em) {
+  .about_page article {
+    padding-top: 3.75em; } }
