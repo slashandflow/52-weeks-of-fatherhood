@@ -15,7 +15,7 @@ $(function() {
     current_congfig = '';
     if (page_width_on_load >= BP_MEDIUM) {
       $('article.week').not(':last-of-type').week_toggle({
-        hidden_selectors: '.text, .statistics, .header h3'
+        hidden_selectors: '.text, .statistics'
       });
       current_congfig = 'desktop';
     } else {
